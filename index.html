@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="dist/js/app.js"></script>
+    <script src="dist/js/core.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/css/app.css"/>
 </head>
 <body>
@@ -11,6 +11,15 @@
         <div>1</div>
         <div>2</div>
         <div>3</div>
+    </div>
+    <div id="breakpoint-tester">
+        <div class="d-flex d-md-none d-xl-none" data-breakpoint-test="mobile">mobile</div>
+        <div class="d-none d-md-flex" data-breakpoint-test="desktop">desktop</div>
+        <div class="d-sm-none" data-breakpoint-test="xs">xs</div>
+        <div class="d-none d-sm-flex d-md-none" data-breakpoint-test="sm">sm</div>
+        <div class="d-none d-md-flex d-lg-none" data-breakpoint-test="md">md</div>
+        <div class="d-none d-lg-flex d-xl-none" data-breakpoint-test="lg">lg</div>
+        <div class="d-none d-xl-flex" data-breakpoint-test="xl">xl</div>
     </div>
 </body>
 </html>

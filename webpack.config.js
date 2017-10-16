@@ -1,6 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var webpack = require('webpack');
 
 const config = {
     module: {
@@ -9,16 +9,16 @@ const config = {
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015', "stage-0", "stage-1", "stage-2"],
-                }
+                },
             }
         ],
-            rules: [{
+        rules: [{
             test: require.resolve('jquery'),
-            use: [
-                {loader: 'expose-loader', options: 'jQuery'},
-                { loader: 'expose-loader', options: '$'}
-            ]
-        },
+                use: [
+                    {loader: 'expose-loader', options: 'jQuery'},
+                    { loader: 'expose-loader', options: '$'}
+                ]
+            },
             {
                 test: require.resolve('popper.js'),
                 use: [{loader: 'expose-loader',options: 'Popper'}]
@@ -26,8 +26,12 @@ const config = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-            }
-        ]
+            },
+            {
+                test: /\.js$/,
+                use: [{loader:"source-map-loader"}],
+                enforce: "pre"
+            }]
     },
 
     resolve: {
@@ -41,10 +45,9 @@ const config = {
 
 };
 
-
 const core = Object.assign({}, config, {
     name: 'core',
-    entry: ['./src/js/index.js', './src/scss/main.scss'],
+    entry: ['./src/js/index.js', './src/scss/core.scss'],
     output: {
         path: __dirname,
         filename: './dist/js/core.js'
