@@ -19,11 +19,12 @@
     "popper.js": "^1.12.5",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.2",
-    "webpack": "^3.7.1"
+    "webpack": "^3.7.1",
+    "path": "^0.12.7"
   },
   "dependencies": {
-    "slick-carousel": "^1.8.1",
     "bootstrap-4": "^4.0.0",
-    "jquery": "^1.12"
+    "jquery": "^1.12",
+    "slick-carousel": "^1.8.1"
   }
 }

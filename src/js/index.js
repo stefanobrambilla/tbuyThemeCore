@@ -8,7 +8,5 @@ import Utility from './modules/utility'
 $(document).on('ready', function () {
     $('body').on('wheel', function (event) {
         console.log(Utility.getScrollDirection(event.originalEvent));
-
     });
-
 });

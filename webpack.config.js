@@ -1,6 +1,5 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
 
 const config = {
     module: {
